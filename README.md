@@ -67,7 +67,35 @@
 
 ---
 
+## 🎨 Using the SVG Design Tool
+
+1. **Access the Design Tool**:
+   - Navigate to the main page of the application to find the SVG Design Tool.
+
+2. **Select a Template**:
+   - Use the dropdown menu to select a predefined SVG template.
+
+3. **Set Dimensions**:
+   - Use the width and height input fields to set the dimensions of your canvas.
+
+4. **Choose Colors**:
+   - Select your desired color using the color picker.
+   - Click the "Cache Color" button to save the selected color for reuse.
+
+5. **Adjust Parameters**:
+   - Modify the parameter input to change the size and spacing of the SVG elements.
+
+6. **Preview Your Design**:
+   - The canvas will update in real-time to reflect your changes.
+
+7. **Export Your Design**:
+   - Click the "Export as SVG" button to download your design as an SVG file.
+
+8. **Use Cached Colors**:
+   - View and select from your cached colors to apply them to your design.
+
+---
+
 ## 📜 License
 
 Licensed under the [MIT License](LICENSE).
-
