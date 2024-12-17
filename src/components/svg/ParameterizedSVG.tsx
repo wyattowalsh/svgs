@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface ParameterizedSVGProps {
   width: number;
@@ -54,9 +55,16 @@ const ParameterizedSVG: React.FC<ParameterizedSVGProps> = ({ width, height, colo
   };
 
   return (
-    <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg">
+    <motion.svg
+      width={width}
+      height={height}
+      xmlns="http://www.w3.org/2000/svg"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       {renderSVG()}
-    </svg>
+    </motion.svg>
   );
 };
 

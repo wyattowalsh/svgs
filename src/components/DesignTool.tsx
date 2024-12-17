@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import { saveAs } from 'file-saver';
-import { ReactP5Wrapper } from 'react-p5-wrapper';
 import { templates } from '../data/presets.json';
+import ParameterizedSVG from '../components/svg/ParameterizedSVG';
 
 const DesignTool = () => {
   const [width, setWidth] = useState(500);
@@ -12,26 +11,10 @@ const DesignTool = () => {
   const [template, setTemplate] = useState(templates[0]);
   const [cachedColors, setCachedColors] = useState<string[]>([]);
 
-  const sketch = (p5) => {
-    p5.setup = () => {
-      p5.createCanvas(width, height);
-    };
-
-    p5.draw = () => {
-      p5.background(255);
-      p5.fill(color);
-      p5.noStroke();
-      for (let i = 0; i < width; i += parameter) {
-        for (let j = 0; j < height; j += parameter) {
-          p5.ellipse(i, j, parameter, parameter);
-        }
-      }
-    };
-  };
-
   const exportSVG = () => {
-    const svg = document.querySelector('canvas').toDataURL('image/svg+xml');
-    saveAs(svg, 'design.svg');
+    const svg = document.querySelector('svg').outerHTML;
+    const blob = new Blob([svg], { type: 'image/svg+xml' });
+    saveAs(blob, 'design.svg');
   };
 
   const cacheColor = () => {
@@ -79,7 +62,7 @@ const DesignTool = () => {
           ))}
         </div>
       </div>
-      <ReactP5Wrapper sketch={sketch} />
+      <ParameterizedSVG width={width} height={height} color={color} parameters={template.parameters} />
       <button onClick={exportSVG}>Export as SVG</button>
     </div>
   );
