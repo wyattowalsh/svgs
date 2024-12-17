@@ -1,4 +1,5 @@
 import p5 from 'p5';
+import { motion } from 'framer-motion';
 
 export const sierpinski = (p: p5) => {
   const depth = 5;
@@ -24,3 +25,17 @@ export const sierpinski = (p: p5) => {
     }
   };
 };
+
+const SierpinskiFractal = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div id="sierpinski-fractal"></div>
+    </motion.div>
+  );
+};
+
+export default SierpinskiFractal;

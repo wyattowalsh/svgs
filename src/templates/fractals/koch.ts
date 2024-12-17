@@ -1,4 +1,5 @@
 import p5 from 'p5';
+import { motion } from 'framer-motion';
 
 export const koch = (p: p5) => {
   const iterations = 5;
@@ -35,3 +36,17 @@ export const koch = (p: p5) => {
     }
   };
 };
+
+const KochFractal = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div id="koch-fractal"></div>
+    </motion.div>
+  );
+};
+
+export default KochFractal;

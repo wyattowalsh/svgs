@@ -78,5 +78,35 @@
       "layers": 4,
       "colors": ["#FF5733", "#33FF57", "#3357FF", "#FF33A1"]
     }
+  },
+  {
+    "name": "Barnsley Fern",
+    "width": 800,
+    "height": 800,
+    "color": "#228B22",
+    "parameters": {
+      "equation": "barnsley",
+      "iterations": 100000
+    }
+  },
+  {
+    "name": "Dragon Curve",
+    "width": 800,
+    "height": 800,
+    "color": "#8A2BE2",
+    "parameters": {
+      "equation": "dragon",
+      "iterations": 15
+    }
+  },
+  {
+    "name": "Cantor Set",
+    "width": 800,
+    "height": 800,
+    "color": "#FF4500",
+    "parameters": {
+      "equation": "cantor",
+      "depth": 6
+    }
   }
 ]

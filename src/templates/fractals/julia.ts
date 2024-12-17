@@ -1,4 +1,5 @@
 import p5 from 'p5';
+import { motion } from 'framer-motion';
 
 export const julia = (p: p5) => {
   const maxIterations = 1000;
@@ -37,3 +38,17 @@ export const julia = (p: p5) => {
     p.updatePixels();
   };
 };
+
+const JuliaFractal = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div id="julia-fractal"></div>
+    </motion.div>
+  );
+};
+
+export default JuliaFractal;
